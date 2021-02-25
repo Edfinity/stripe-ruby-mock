@@ -107,7 +107,18 @@ module StripeMock
         object: 'account_link',
         created: now,
         expires_at: now + 300,
-        url: 'https://connect.stripe.com/setup/c/iB0ph1cPnRLY'
+        url: 'https://connect.stripe.com/setup/c/iB0ph1cPnRLY',
+        data: {}
+      }.merge(params)
+    end
+
+    def self.mock_express_login_link(params = {})
+      now = Time.now.to_i
+      {
+        object: 'login_link',
+        created: now,
+        url: 'https://connect.stripe.com/express/Ln7FfnNpUcCU',
+        data: {}
       }.merge(params)
     end
 
@@ -1128,7 +1139,7 @@ module StripeMock
     end
 
     def self.mock_subscription_item(params = {})
-      id = params[:id] || 'test_txn_default'
+      id = params[:id] || 'test_si_default'
       {
         id: id,
         object: 'subscription_item',

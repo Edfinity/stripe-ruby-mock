@@ -13,6 +13,7 @@ def it_behaves_like_stripe(&block)
   it_behaves_like 'Card API', &block
   it_behaves_like 'Charge API', &block
   it_behaves_like 'Bank API', &block
+  it_behaves_like 'Express Login Link API', &block
   it_behaves_like 'External Account API', &block
   it_behaves_like 'Coupon API', &block
   it_behaves_like 'Customer API', &block
@@ -31,7 +32,8 @@ def it_behaves_like_stripe(&block)
   it_behaves_like 'PaymentMethod API', &block
   it_behaves_like 'SetupIntent API', &block
   it_behaves_like 'Stripe Error Mocking', &block
-  it_behaves_like 'Customer Subscriptions', &block
+  it_behaves_like 'Customer Subscriptions with plans', &block
+  it_behaves_like 'Customer Subscriptions with prices', &block
   it_behaves_like 'Subscription Items API', &block
   it_behaves_like 'Webhook Events API', &block
   it_behaves_like 'Country Spec API', &block
